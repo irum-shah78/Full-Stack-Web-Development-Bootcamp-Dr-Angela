@@ -73,3 +73,36 @@ $("h1").append("<button>New Button</button>");
 
 // remove the elements
 // $("button").remove();
+
+// Animations(all the methods come with "toggle" as well)
+// hide and show for once - toggle for multiple times
+// $("button").on("click", function () {
+//     $("h1").hide();
+//     // $("h1").show();
+//     // $("h1").toggle();
+// })
+
+// fadeIn and fadeOut - to smoothly hide and show the elements, fadeToggle - to smoothly hide and show the elements on one button click
+// $("button").on("click", function () {
+//     $("h1").fadeOut();
+//     // $("h1").fadeIn();
+//     // $("h1").fadeToggle();
+// })
+
+// slideUp and slideDown - collapse and expand the elements, slideToggle - to do slideUp and slideDown of both(useful for dropdowns)
+// $("button").on("click", function () {
+//     // $("h1").slideUp();
+//     // $("h1").slideDown();
+//     $("h1").slideToggle();
+// })
+
+// if we want to control the animations and not to use these default methods then we can use "animate" method and pass the css properties as parameters
+// inside the animate method we can only use the css properties which have numeric values like opacity, height, width, etc. but not color, background-color, etc.
+// $("button").on("click", function () {
+//     $("h1").animate({ opacity: 0.5 });
+// });
+
+// for multiple animations at the same time we can do something like this:
+$("button").on("click", function () {
+    $("h1").slideUp().slideDown().animate({ opacity: 0.3 });
+})
