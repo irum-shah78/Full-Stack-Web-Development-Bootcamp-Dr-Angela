@@ -11,8 +11,9 @@ $(document).ready(function () {
         console.log(randomChosenColour);
         gamePattern.push(randomChosenColour);
         $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
-        var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
-        audio.play();
+        // var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
+        // audio.play();
+        playSound(randomChosenColour);
     }
     // nextSequence();
     $(document).keydown(function () {
@@ -23,6 +24,7 @@ $(document).ready(function () {
         var userChosenColour = $(this).attr("id");
         userClickedPattern.push(userChosenColour);
         console.log(userClickedPattern);
+        playSound(userChosenColour);
     });
 
     function playSound(name) {
