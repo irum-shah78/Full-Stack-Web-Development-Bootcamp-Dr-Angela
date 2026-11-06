@@ -25,6 +25,7 @@ $(document).ready(function () {
         userClickedPattern.push(userChosenColour);
         console.log(userClickedPattern);
         playSound(userChosenColour);
+        animatePress(userChosenColour);
     });
 
     function playSound(name) {
@@ -32,4 +33,10 @@ $(document).ready(function () {
         audio.play();
     }
 
+    function animatePress(currentColour) {
+        $("#" + currentColour).addClass("pressed");
+        setTimeout(() => {
+            $("#" + currentColour).removeClass("pressed");
+        }, 100);
+    }
 });
